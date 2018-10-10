@@ -6,6 +6,9 @@
 .AppleDouble
 .LSOverride
 
+# p5.js local libraries
+p5/
+
 # Icon must end with two \r
 Icon
 
