@@ -16,7 +16,6 @@ var bucketIncrement = 10;
 
 //score keeping config
 var score = 0;
-var scoreIncrement = 10;
 
 //initial setup
 function setup() {
@@ -51,8 +50,13 @@ function draw() {
   y += yVel;
   yVel += yAcc;
 
-  //render ball and bucket
+  //render score tally
   background(0);
+  for (i = 1; i <= score; i++) {
+    ellipse(i * 20, 20, 15);
+  }
+
+  //render ball and bucket
   ellipse(x, y, ballWidth);
   rect(mouseX, 380, bucketWidth, 40);
 }
@@ -67,7 +71,7 @@ function advanceGame() {
   yVel = random(-1, -yVelMax);
 
   //increment score
-  score += scoreIncrement;
+  score++;
 
   //decrement bucket width
   bucketWidth -= bucketIncrement;
